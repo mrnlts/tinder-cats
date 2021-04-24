@@ -22,4 +22,15 @@ router.get('/', (req, res, next) => {
     });
 });
 
+router.get('/:id', (req, res, next) => {
+  const { id } = req.params;
+  Cat.findById(id)
+    .then(cat => {
+      res.render('cats/detail', { cat });
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
 module.exports = router;
