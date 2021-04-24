@@ -1,11 +1,15 @@
 
   <h1>List all cats</h1>
+  <a href="/cats/create">Create cat</a>
   <ul>
   {{#each cats}}
     <li>
       <a href="/cats/{{this._id}}"> 
         {{ this.name }}
       </a>
+      <form action="/cats/{{this._id}}" method="POST">
+        <button type="submit" style="cursor: pointer;">delete</button>
+      </form>
     </li>
   {{/each}}
   </ul>
