@@ -7,9 +7,10 @@
       <a href="/cats/{{this._id}}"> 
         {{ this.name }}
       </a>
-      <form action="/cats/{{this._id}}" method="POST">
+      <form action="/cats/{{this._id}}/delete" method="POST">
         <button type="submit" style="cursor: pointer;">delete</button>
       </form>
+      <a href="/cats/{{this._id}}/edit">edit</a>
     </li>
   {{/each}}
   </ul>
