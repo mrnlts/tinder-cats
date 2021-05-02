@@ -1,0 +1,19 @@
+<form action="/cats/update/{{this.cat.id}}" method="post" class="form">
+    <label for="profile-picture">Foto de perfil</label>
+    <input type="text" id="profile-picture" name="image" value={{this.cat.image}}>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value={{this.cat.name}}>
+    <label for="cat-age">Edad</label>
+    <input type="text" id="cat-age" name="age" value={{this.cat.age}}>
+    <label for="cat-status">¿Está soltero/a?</label>
+    <input type="text" id="cat-status" name="isSingle" value={{this.cat.isSingle}}>
+    <label for="user">Propietario: </label>
+    <select name="user">
+      <option disable selected value=""></option>
+      {{#each usersFromDB}}
+        <option value="{{this._id}}"> {{this.name}} </option>
+      {{/each}}
+    </select>
+  </label>
+    <button type="submit" class="submit-btn">Confirm changes</button>
+</form>

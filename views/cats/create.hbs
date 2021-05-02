@@ -1,0 +1,20 @@
+<h1>Introduzca los datos del minino o minina</h1>
+<form action="/cats" method="POST" class="form">
+  <label for="profile-picture">Foto de perfil</label>
+  <input type="text" id="profile-picture" name="image">
+  <label for="cat-name">Nombre</label>
+  <input type="text" id="cat-name" name="name" >
+  <label for="cat-age">Edad</label>
+  <input type="text" id="cat-age" name="age" >
+  <label for="cat-status">¿Está soltero/a?</label>
+  <input type="text" id="cat-status" name="isSingle" >
+  <label for="user">Propietario: </label>
+    <select name="user">
+      <option disable selected value=""></option>
+      {{#each usersFromDB}}
+        <option value="{{this._id}}"> {{this.name}} </option>
+      {{/each}}
+    </select>
+  </label>
+  <button type="submit" class="submit-btn">Submit</button>
+</form>

@@ -1,0 +1,9 @@
+<form action="/users/update/{{this.user.id}}" class="form" method="post">
+  <label for="user-name">Nombre</label>
+  <input type="text" id="user-name" name="name" value="{{user.name}}">
+  <label for="user-lastName">Apellido</label>
+  <input type="text" id="user-lastName" name="lastName" value="{{user.lastName}}">
+  <label for="user-age">Edad</label>
+  <input type="text" id="user-age" name="age" value="{{user.age}}">
+    <button type="submit" class="submit-btn">Confirm changes</button>
+</form>

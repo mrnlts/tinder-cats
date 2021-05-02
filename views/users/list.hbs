@@ -1,0 +1,27 @@
+<div id="list">
+    <nav>
+        <h1>The owners</h1>
+        <a href="/cats/create">Create cat</a>
+        <a href="/users/create">Create user</a>
+        <a href="/cats">Cat index</a>
+    </nav>
+    <div id="users">
+    {{#each users}}
+        <div>
+            <h1>ID: {{ this._id }}</h1>
+            <h2>Name: {{ this.name }}</h2>
+            <h2>Last name: {{this.lastName}}</h2>
+            <h2>Age: {{this.age}}</h2>
+
+            <div id="buttons">
+                <form action="/users/{{this._id}}" method="POST" id="delete">
+                    <button type="submit" style="cursor: pointer;">delete</button>
+                </form>
+                <form action="/users/update/{{this._id}}" method="GET" id="update">
+                    <button type="submit" style="cursor: pointer;">update</button>
+                </form>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>
